@@ -2,7 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import userRoutes from './routes/user.route.js';// for backend imports use .js
-
+import authRoutes from './routes/auth.route.js';
 dotenv.config();
 
 mongoose.connect(process.env.MONGO)
@@ -10,8 +10,9 @@ mongoose.connect(process.env.MONGO)
     console.log('Mongo db is connected')
 })
 const app = express(); 
-
+app.use(express.json());//It parses incoming JSON requests and puts the parsed data in req.body.
 
 app.listen(3000,()=>{ console.log('Server is running on port 3000!');})
 
 app.use('/api/user',userRoutes);
+app.use('/api/auth', authRoutes);
