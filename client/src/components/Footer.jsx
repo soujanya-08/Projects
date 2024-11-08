@@ -63,8 +63,6 @@ export default function FooterCom() {
                                 </Footer.Link>
                                 <Footer.Link
                                     href="#"
-                                    
-                                    
                                 >
                                     Terms &amp; Conditions
                                 </Footer.Link>
